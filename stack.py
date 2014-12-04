@@ -1,4 +1,6 @@
 
+#http://interactivepython.org/courselib/static/pythonds/BasicDS/stacks.html
+
 
 class Stack:
 

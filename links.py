@@ -18,7 +18,9 @@ class UrlLinks(object):
             response = urllib2.urlopen(self.url).read()
             soup = BeautifulSoup(response)
             for line in soup.find_all('a'):
-                self.links.add(line.get('href'))
+                url = line.get('href')
+                if url is not None and url.startswith("http"):
+                    self.links.add(url)
         except urllib2.HTTPError as e:
             print e.reason
 
